@@ -1,0 +1,105 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<project xmlns="http://maven.apache.org/POM/4.0.0"-->
+<!--         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">-->
+<!--    <modelVersion>4.0.0</modelVersion>-->
+
+<!--    <groupId>org.kienlc</groupId>-->
+<!--    <artifactId>spring-boot-3-microservices-course</artifactId>-->
+<!--    <version>1.0-SNAPSHOT</version>-->
+
+<!--    <properties>-->
+<!--        <maven.compiler.source>17</maven.compiler.source>-->
+<!--        <maven.compiler.target>17</maven.compiler.target>-->
+<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+<!--    </properties>-->
+
+<!--</project>-->
+
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.11</version>
+    <relativePath/> <!-- lookup parent from repository -->
+</parent>
+<groupId>com.programming.techie</groupId>
+<artifactId>spring-boot-3-microservices</artifactId>
+<version>1.0-SNAPSHOT</version>
+<packaging>pom</packaging>
+
+<name>spring-boot-3-microservices</name>
+<modules>
+    <module>api-gateway</module>
+<!--    <module>config-server</module>-->
+<!--    <module>oauth2-server</module>-->
+<!--    <module>service-registry</module>-->
+<!--    <module>hystrix-dashboard</module>-->
+<!--    <module>catalog-service</module>-->
+<!--    <module>inventory-service</module>-->
+<!--    <module>order-service</module>-->
+<!--    <module>shoppingcart-ui</module>-->
+<!--    <module>zipkin-server</module>-->
+</modules>
+
+<properties>
+    <java.version>17</java.version>
+    <spring-cloud.version>2023.0.2</spring-cloud.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Các dependency khác -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.30</version> <!-- Phiên bản mới nhất -->
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Dependency Lombok (kế thừa version từ parent) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+<!--                <image>-->
+<!--                    <name>saiupadhyayula007/new-${project.artifactId}</name>-->
+<!--                    <builder>dashaun/builder:tiny</builder>-->
+<!--                    <publish>true</publish>-->
+<!--                </image>-->
+<!--                <docker>-->
+<!--                    <publishRegistry>-->
+<!--                        <username>saiupadhyayula007</username>-->
+<!--                        <password>${dockerPassword}</password>-->
+<!--                    </publishRegistry>-->
+<!--                </docker>-->
+                <excludes>
+                    <exclude>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </exclude>
+                </excludes>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+</project>
